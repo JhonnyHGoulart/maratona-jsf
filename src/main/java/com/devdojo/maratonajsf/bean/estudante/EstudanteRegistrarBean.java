@@ -1,6 +1,6 @@
-package be.com.devdojo.maratonajsf.bean.estudante;
+package com.devdojo.maratonajsf.bean.estudante;
 
-import be.com.devdojo.maratonajsf.model.Estudante;
+import com.devdojo.maratonajsf.model.Estudante;
 
 import javax.inject.Named;
 import java.io.Serializable;

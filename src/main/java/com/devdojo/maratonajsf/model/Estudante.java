@@ -1,6 +1,6 @@
-package be.com.devdojo.maratonajsf.model;
+package com.devdojo.maratonajsf.model;
 
-import be.com.devdojo.maratonajsf.model.enuns.Turno;
+import com.devdojo.maratonajsf.model.enuns.Turno;
 
 public class Estudante {
     private String nome = "Jhonny";

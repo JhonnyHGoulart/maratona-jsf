@@ -1,4 +1,4 @@
-package be.com.devdojo.maratonajsf.model.enuns;
+package com.devdojo.maratonajsf.model.enuns;
 
 public enum Turno {
     MATUTINO,
