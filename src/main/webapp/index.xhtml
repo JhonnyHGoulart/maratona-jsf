@@ -61,9 +61,24 @@
     <h:outputLabel value="#{estudanteRegistrarBean.estudante.nomesMap}"/><br/>
     <!--ui:repeat Set-->
     <ui:repeat value="#{estudanteRegistrarBean.estudante.nomesMap.entrySet().toArray()}" var="entry">
-        <h:outputLabel value="#{entry.key} - #{entry.value}"/>
+        <h:outputLabel value="#{entry.key} - #{entry.value}"/><br/>
     </ui:repeat>
 
+    <!--Métodos-->
+    <h:outputLabel value="Executando Métodos"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.estudante.executar()}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.estudante.executar('xuxu beleza')}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.estudante.executar(estudanteRegistrarBean.estudante.nome)}"/><br/>
+    <h:outputLabel
+            value="#{estudanteRegistrarBean.estudante.executarRetorno(estudanteRegistrarBean.estudante.nome)}"/><br/>
+    <!--No commandButton abaixo, usamos o "action" poiś ele espera um retorno.
+        já se usarmos o actionListener ele entrará no método, executara o que deve executar e saira do método
+        sem que sejá redirecionado para outra página-->
+    <h:form>
+        <h:commandButton value="Ir para proxima página"
+                         action="#{estudanteRegistrarBean.estudante.irParaIndex2()}"
+                         style="background-color: red"/>
+    </h:form>
 </h:body>
 
 </html>

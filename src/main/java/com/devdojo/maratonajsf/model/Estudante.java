@@ -24,12 +24,36 @@ public class Estudante {
         nomesMap.put("Naruto", "O com mais lenga lenga");
 
         /**
-         * O for abaixo sereve para iterar sobre o MAP
+         * O for abaixo sereve para iterar sobre o MAP.
          */
-        for (Map.Entry<String, String> entry : nomesMap.entrySet()) {
-            System.out.println(entry.getKey());
-            System.out.println(entry.getValue());
-        }
+//        for (Map.Entry<String, String> entry : nomesMap.entrySet()) {
+//            System.out.println(entry.getKey());
+//            System.out.println(entry.getValue());
+//        }
+    }
+
+    public void executar() {
+        System.out.println("Fazendo uma busca no banco");
+        System.out.println("Processando os dados");
+        System.out.println("Exibindo os dados");
+    }
+
+    public void executar(String param) {
+        System.out.println("Fazendo uma busca no banco com PARAMETRO: " + param);
+        System.out.println("Processando os dados");
+        System.out.println("Exibindo os dados");
+    }
+
+    public String executarRetorno(String param) {
+        return "Quem é o estudante?" + param;
+    }
+
+    /**
+     * No método abaixo usamos o "?faces-redirect=true após" o nome da página,
+     * para retornar a URL quando mudarmos de página.
+     */
+    public String irParaIndex2() {
+        return "index2?faces-redirect=true";
     }
 
     public Map<String, String> getNomesMap() {
