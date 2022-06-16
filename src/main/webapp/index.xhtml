@@ -77,8 +77,13 @@
     <h:form>
         <h:commandButton value="Ir para proxima página"
                          action="#{estudanteRegistrarBean.estudante.irParaIndex2()}"
-                         style="background-color: red"/>
+                         style="background-color: red"/><br/><br/>
     </h:form>
+
+    <!--Imprimindo css com Expression Language-->
+    <ui:repeat value="#{estudanteRegistrarBean.estudante.nomesList}" var="nome" varStatus="status">
+        <h:outputLabel value="#{nome}" style="color: #{status.index mod 2 == 0 ? 'red' : 'green'}"/><br/>
+    </ui:repeat>
 </h:body>
 
 </html>

@@ -14,7 +14,7 @@ public class Estudante {
     private double nota3 = 10;
     private Turno turno = Turno.MATUTINO;
     private String[] nomesArray = {"Jhonny", "Hilário"};
-    private List<String> nomesList = asList("Kamilla", "Ramos");
+    private List<String> nomesList = asList("Kamilla", "Ramos", "Justino");
     private Set<String> nomesSet = new HashSet<>(asList("Leandro", "Hilário"));
     private Map<String, String> nomesMap = new HashMap<>();
 
