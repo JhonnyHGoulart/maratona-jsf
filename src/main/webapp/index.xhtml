@@ -24,8 +24,46 @@
     <h:outputText value="#{estudanteRegistrarBean.estudante.nome += ' sobrenome alguma coisa'}"/><br/>
     <!--Palavras reservadas: and, or !, eq, ne, lt, gt, le, ge, true, false, null, instanceof, empty, div, mod-->
 
+    <h:outputLabel value="---------------ENUMS---------------"/><br/>
     <h:outputText value="ENUM"/><br/>
     <h:outputText value="#{estudanteRegistrarBean.estudante.turno.equals(Turno.MATUTINO)}"/><br/>
+
+    <h:outputLabel value="---------------ARRAYS---------------"/><br/>
+    <!--Arrays-->
+    <h:outputLabel value="#{estudanteRegistrarBean.estudante.nomesArray[0]}
+                          #{estudanteRegistrarBean.estudante.nomesArray[1]}"/><br/>
+    <!--ui:repeat Array-->
+    <ui:repeat value="#{estudanteRegistrarBean.estudante.nomesArray}" var="nome">
+        <h:outputLabel value="#{nome}"/><br/>
+    </ui:repeat>
+
+    <h:outputLabel value="---------------LIST---------------"/><br/>
+    <!--List-->
+    <h:outputLabel value="#{estudanteRegistrarBean.estudante.nomesList.get(0)}
+                          #{estudanteRegistrarBean.estudante.nomesList.get(1)}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.estudante.nomesList}"/>
+    <!--ui:repeat List-->
+    <ui:repeat value="#{estudanteRegistrarBean.estudante.nomesList}" var="nome"><br/>
+        <h:outputLabel value="#{nome}"/><br/>
+    </ui:repeat>
+
+    <h:outputLabel value="---------------SET---------------"/><br/>
+    <!--Set-->
+    <h:outputLabel value="#{estudanteRegistrarBean.estudante.nomesSet}"/><br/>
+    <!--ui:repeat Set-->
+    <ui:repeat value="#{estudanteRegistrarBean.estudante.nomesSet.toArray()}" var="nome"><br/>
+        <h:outputLabel value="#{nome}"/><br/>
+    </ui:repeat>
+
+    <!--MAP-->
+    <h:outputLabel value="---------------MAP---------------"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.estudante.nomesMap.get('Goku')}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.estudante.nomesMap}"/><br/>
+    <!--ui:repeat Set-->
+    <ui:repeat value="#{estudanteRegistrarBean.estudante.nomesMap.entrySet().toArray()}" var="entry">
+        <h:outputLabel value="#{entry.key} - #{entry.value}"/>
+    </ui:repeat>
+
 </h:body>
 
 </html>

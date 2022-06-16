@@ -2,6 +2,10 @@ package com.devdojo.maratonajsf.model;
 
 import com.devdojo.maratonajsf.model.enuns.Turno;
 
+import java.util.*;
+
+import static java.util.Arrays.asList;
+
 public class Estudante {
     private String nome = "Jhonny";
     private String sobrenome = "Hilário";
@@ -9,6 +13,56 @@ public class Estudante {
     private double nota2;
     private double nota3 = 10;
     private Turno turno = Turno.MATUTINO;
+    private String[] nomesArray = {"Jhonny", "Hilário"};
+    private List<String> nomesList = asList("Kamilla", "Ramos");
+    private Set<String> nomesSet = new HashSet<>(asList("Leandro", "Hilário"));
+    private Map<String, String> nomesMap = new HashMap<>();
+
+    {
+        nomesMap.put("Goku", "O mais forte");
+        nomesMap.put("One Pice", "O mais longo");
+        nomesMap.put("Naruto", "O com mais lenga lenga");
+
+        /**
+         * O for abaixo sereve para iterar sobre o MAP
+         */
+        for (Map.Entry<String, String> entry : nomesMap.entrySet()) {
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue());
+        }
+    }
+
+    public Map<String, String> getNomesMap() {
+        return nomesMap;
+    }
+
+    public void setNomesMap(Map<String, String> nomesMap) {
+        this.nomesMap = nomesMap;
+    }
+
+    public Set<String> getNomesSet() {
+        return nomesSet;
+    }
+
+    public void setNomesSet(Set<String> nomesSet) {
+        this.nomesSet = nomesSet;
+    }
+
+    public List<String> getNomesList() {
+        return nomesList;
+    }
+
+    public void setNomesList(List<String> nomesList) {
+        this.nomesList = nomesList;
+    }
+
+    public String[] getNomesArray() {
+        return nomesArray;
+    }
+
+    public void setNomesArray(String[] nomesArray) {
+        this.nomesArray = nomesArray;
+    }
 
     public Turno getTurno() {
         return turno;
