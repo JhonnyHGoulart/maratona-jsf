@@ -1,15 +1,22 @@
-package be.com.devdojo.maratonajsf.bean.estudante;
+package be.com.devdojo.maratonajsf.model;
 
-import javax.inject.Named;
-import java.io.Serializable;
+import be.com.devdojo.maratonajsf.model.enuns.Turno;
 
-@Named
-public class EstudanteRegistrarBean implements Serializable {
+public class Estudante {
     private String nome = "Jhonny";
     private String sobrenome = "Hilário";
     private double nota1 = 20;
     private double nota2;
     private double nota3 = 10;
+    private Turno turno = Turno.MATUTINO;
+
+    public Turno getTurno() {
+        return turno;
+    }
+
+    public void setTurno(Turno turno) {
+        this.turno = turno;
+    }
 
     public String getNome() {
         return nome;
