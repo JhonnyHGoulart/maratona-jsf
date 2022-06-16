@@ -17,6 +17,8 @@ public class Estudante {
     private List<String> nomesList = asList("Kamilla", "Ramos", "Justino");
     private Set<String> nomesSet = new HashSet<>(asList("Leandro", "Hilário"));
     private Map<String, String> nomesMap = new HashMap<>();
+    private boolean mostrarNotas;
+    private boolean mostrarLink;
 
     {
         nomesMap.put("Goku", "O mais forte");
@@ -54,6 +56,38 @@ public class Estudante {
      */
     public String irParaIndex2() {
         return "index2?faces-redirect=true";
+    }
+
+    public void exibirNotas() {
+        this.mostrarNotas = true;
+    }
+
+    public void esconderNotas() {
+        this.mostrarNotas = false;
+    }
+
+    public void exibirLink() {
+        this.mostrarLink = true;
+    }
+
+    public void esconderLink() {
+        this.mostrarLink = false;
+    }
+
+    public boolean isMostrarLink() {
+        return mostrarLink;
+    }
+
+    public void setMostrarLink(boolean mostrarLink) {
+        this.mostrarLink = mostrarLink;
+    }
+
+    public void setMostrarNotas(boolean mostrarNotas) {
+        this.mostrarNotas = mostrarNotas;
+    }
+
+    public boolean isMostrarNotas() {
+        return mostrarNotas;
     }
 
     public Map<String, String> getNomesMap() {

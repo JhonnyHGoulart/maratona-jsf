@@ -6,6 +6,10 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+
+</h:head>
 <h:body>
     <!--Tag do Primefaces para utilizar o ENUM com a Expression Language-->
     <p:importEnum type="com.devdojo.maratonajsf.model.enuns.Turno"
@@ -86,4 +90,48 @@
     </ui:repeat>
 </h:body>
 
+<!--Atribuimos um id para o forme abaixo, para identificado no inspect da página-->
+<h:form id="form">
+    <!--A tag AJAX dentro do comandBotton serve para renderizar apenas os atributos informados, e está sendo utilizada
+    no lugar do action-->
+    <h:commandButton value="Exibir notas">
+        <f:ajax render="notasGrid" listener="#{estudanteRegistrarBean.estudante.exibirNotas()}"/>
+    </h:commandButton><br/>
+    <!--A tag AJAX dentro do comandBotton serve para renderizar apenas os atributos informados, e está sendo utilizada
+    no lugar do action-->
+    <h:commandButton value="Esconder notas">
+        <f:ajax render="notasGrid" listener="#{estudanteRegistrarBean.estudante.esconderNotas()}"/>
+    </h:commandButton><br/>
+    <!--O panelGrid abaixo é necessário para renderizar novamente os atributos,
+     veja que atribuimos um id para o panelGrid com o nome de "notasGrid", isso se dá pois,
+     utilizado esse id dentro da tag AJAX que está no comandButton acima-->
+    <h:panelGrid id="notasGrid">
+        <!--O rendered incluiso na Espression Language abaixo quer dizer que só será exibido
+        se o atributo mostrarNotas for true-->
+        <h:outputText value="#{estudanteRegistrarBean.estudante.nome}"/><br/>
+        <h:outputText value="#{estudanteRegistrarBean.estudante.sobrenome}"/><br/>
+        <h:outputText value="#{estudanteRegistrarBean.estudante.turno}"/><br/>
+        <h:outputText value="#{estudanteRegistrarBean.estudante.nota1}"
+                      rendered="#{estudanteRegistrarBean.estudante.mostrarNotas}"/><br/>
+        <h:outputText value="#{estudanteRegistrarBean.estudante.nota2}"
+                      rendered="#{estudanteRegistrarBean.estudante.mostrarNotas}"/><br/>
+        <h:outputText value="#{estudanteRegistrarBean.estudante.nota3}"
+                      rendered="#{estudanteRegistrarBean.estudante.mostrarNotas}"/><br/>
+    </h:panelGrid><br/>
+
+    <!--O código abaixo segue o mesmo padrão do códito acima, leia os comentários!-->
+    <h:commandButton value="Exibir Link">
+        <f:ajax render="pgLink" listener="#{estudanteRegistrarBean.estudante.exibirLink()}"/>
+    </h:commandButton><br/>
+    <h:commandButton value="Esconder Link">
+        <f:ajax render="pgLink" listener="#{estudanteRegistrarBean.estudante.esconderLink()}"/>
+    </h:commandButton><br/>
+
+    <h:panelGroup id="pgLink">
+        <ui:fragment id="fragmentLink" rendered="#{estudanteRegistrarBean.estudante.mostrarLink}">
+            <a href="http://www.google.com" target="_blak">www.google.com.br</a>
+        </ui:fragment>
+    </h:panelGroup>
+
+</h:form>
 </html>
