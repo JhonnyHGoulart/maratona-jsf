@@ -5,10 +5,20 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
-<f:view>
-    <h:outputLabel value="Hello, world">
-    <br/>
-    <h:outputLabel value="#{estudanteRegistrarBean.nome}"/>
+<h:body>
+    <h:outputLabel value="Hello, world"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.nome}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.nota1 eq estudanteRegistrarBean.nota2}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.nota1 == estudanteRegistrarBean.nota2}"/><br/>
+    <h:outputLabel value="#{estudanteRegistrarBean.nota1 eq estudanteRegistrarBean.nota2 and
+    estudanteRegistrarBean.nome.equals('Jhonny')}"/><br/>
+    <h:outputText value="#{estudanteRegistrarBean.nota1 &lt;= estudanteRegistrarBean.nota2}"/><br/>
+    <h:outputText value="#{estudanteRegistrarBean.nota1 le estudanteRegistrarBean.nota2}"/><br/>
+    <h:outputText value="#{estudanteRegistrarBean.nota1 = estudanteRegistrarBean.nota3}"/><br/>
+    <h:outputText value="#{estudanteRegistrarBean.nome += ' sobrenome alguma coisa'}"/><br/>
+    <!--Palavras reservadas: and, or !, eq, ne, lt, gt, le, ge, true, false, null, instanceof, empty, div, mod-->
 
-</f:view>
+
+</h:body>
+
 </html>

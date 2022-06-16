@@ -1,4 +1,4 @@
-package com.devdojo.maratonajsf;
+package be.com.devdojo.maratonajsf.bean.estudante;
 
 import javax.inject.Named;
 import java.io.Serializable;
@@ -7,7 +7,7 @@ import java.io.Serializable;
 public class EstudanteRegistrarBean implements Serializable {
     private String nome = "Jhonny";
     private String sobrenome = "Hilário";
-    private double nota1;
+    private double nota1 = 20;
     private double nota2;
     private double nota3 = 10;
 
