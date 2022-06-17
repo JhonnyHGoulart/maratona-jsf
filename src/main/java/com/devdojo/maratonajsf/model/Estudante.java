@@ -2,6 +2,8 @@ package com.devdojo.maratonajsf.model;
 
 import com.devdojo.maratonajsf.model.enuns.Turno;
 
+import javax.el.LambdaExpression;
+import javax.faces.context.FacesContext;
 import java.util.*;
 
 import static java.util.Arrays.asList;
@@ -72,6 +74,11 @@ public class Estudante {
 
     public void esconderLink() {
         this.mostrarLink = false;
+    }
+
+    public void calcularCubo(LambdaExpression le, long value) {
+        long result = (long) le.invoke(FacesContext.getCurrentInstance().getELContext(), value);
+        System.out.println(result);
     }
 
     public boolean isMostrarLink() {
