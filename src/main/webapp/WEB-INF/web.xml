@@ -9,7 +9,7 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     <welcome-file-list>
-        <welcome-file>session.xhtml</welcome-file>
+        <welcome-file>conversation.xhtml</welcome-file>
     </welcome-file-list>
 
     <servlet-mapping>
@@ -25,6 +25,12 @@
     <session-config>
         <session-timeout>30</session-timeout>
     </session-config>
+
+    <!--No error-page abaixo, criamos uma página de erro para que quando ocorrer um erro,
+     o usuário seja direcionado para essa página-->
+    <error-page>
+        <location>/error.xhtml</location>
+    </error-page>
 
 
 </web-app>

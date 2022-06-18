@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+
+</h:head>
+
+<h:body>
+    <!--O "testeApplicationBean.categoriaList" logo abaixo, está sendo utilizado na view view2,
+        para mostrar como os atributos e objetos do TesteApplicationBean,
+        podem ser chamados em qualquer outro escopo-->
+    <h:outputText value="#{testeApplicationBean.categoriaList}"/><br/>
+
+    <h:outputLabel value="Pegando o valor do View bean"/><br/>
+
+    <h:outputText value="#{testeViewBean.personagemSelecionado}"/>
+</h:body>
+</html>
