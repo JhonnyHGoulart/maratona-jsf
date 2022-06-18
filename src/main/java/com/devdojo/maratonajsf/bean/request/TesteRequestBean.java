@@ -1,5 +1,6 @@
 package com.devdojo.maratonajsf.bean.request;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Named;
 import java.io.Serializable;
@@ -16,10 +17,20 @@ import static java.util.Arrays.asList;
  * Ele deve ser usado quando por exemplo, precisa-se apenas exibir dados para o usuário,
  * ou que não envolva a utilização dos valores dessa view.
  */
-@RequestScoped
+
 public class TesteRequestBean implements Serializable {
-    private List<String> personagens = asList("Saitama", "Goku", "kurama");
+    private List<String> personagens;
     private List<String> personagemSelecionado = new ArrayList<>();
+
+    /**
+     * O PostConstruct faz com que o método seja inicializado após os atributos e os construtores,
+     * ele deve ser por padrão public e void.
+     */
+    @PostConstruct
+    public void init() {
+        System.out.println("Entrou no PostConstruct do RequestScoped");
+        personagens = asList("Saitama", "Goku", "kurama");
+    }
 
     /**
      * ThreadLocalRandom.current().nextInt(3);
