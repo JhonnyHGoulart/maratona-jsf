@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+                                  http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <!--Este é o arquivo de configuração do FlowScoped-->
+
+    <!--Na tag abaixo, em <flow-definition id="registration"> determinamos o ponto de entrada do FlowScoped-->
+    <flow-definition id="registration">
+        <!--Na tag flow-return abaixo, determinamos o ponto de saída, com o nome e a página que deve ser redirecionado.
+        Observe que podemos criar vários pontos de saída-->
+        <flow-return id="exitToInicio">
+            <from-outcome>/inicioflow.xhtml</from-outcome>
+        </flow-return>
+        <flow-return id="exitToIndex">
+            <from-outcome>/index.xhtml</from-outcome>
+        </flow-return>
+
+    </flow-definition>
+</faces-config>
