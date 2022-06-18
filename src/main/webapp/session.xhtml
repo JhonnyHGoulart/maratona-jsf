@@ -12,6 +12,11 @@
 
 <h:body>
     <h:form>
+        <!--O "testeApplicationBean.categoriaList" logo abaixo, está sendo utilizado na view session,
+        para mostrar como os atributos e objetos do TesteApplicationBean,
+        podem ser chamados em qualquer outro escopo-->
+        <h:outputText value="#{testeApplicationBean.categoriaList}"/><br/>
+
         <h:outputText value="#{testeSessionBean.personagemSelecionado}"/><br/>
         <h:commandButton value="Selecionar personagem"
                          actionListener="#{testeSessionBean.selecionaPersonagem()}"/>
