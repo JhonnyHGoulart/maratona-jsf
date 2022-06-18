@@ -9,9 +9,9 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     <welcome-file-list>
-        <welcome-file>request.xhtml</welcome-file>
+        <welcome-file>session.xhtml</welcome-file>
     </welcome-file-list>
-    
+
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
@@ -20,7 +20,11 @@
         <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
         <param-value>true</param-value>
     </context-param>
-    
+    <!--A configuração <session-timeout>30</session-timeout> serve para invalidar a página,
+    o tempo usado é em minutos-->
+    <session-config>
+        <session-timeout>30</session-timeout>
+    </session-config>
 
 
 </web-app>
