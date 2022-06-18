@@ -10,6 +10,11 @@
 
 </h:head>
 
+<!--O metadata abaixo quer dizer que, o método será executado antes mesmo do PostContruct-->
+<f:metadata>
+    <f:viewAction action="#{testeConversationBean.init}"/>
+</f:metadata>
+
 <h:body>
     <h:form>
         <!--O "testeApplicationBean.categoriaList" logo abaixo, está sendo utilizado na view view,
@@ -17,15 +22,26 @@
         podem ser chamados em qualquer outro escopo-->
         <h:outputText value="#{testeApplicationBean.categoriaList}"/><br/>
 
-        <h:outputText value="#{testeViewBean.personagemSelecionado}"/><br/>
+        <h:outputText value="#{testeConversationBean.personagemSelecionado}"/><br/>
         <h:commandButton value="Selecionar personagem"
-                         actionListener="#{testeViewBean.selecionaPersonagem()}"/>
+                         actionListener="#{testeConversationBean.selecionaPersonagem()}"/>
 
-        <h:commandButton actionListener="#{testeViewBean.selecionaPersonagem}"
-                         value="Selecionar Personagem Foard" action="view2"/>
+        <h:commandButton actionListener="#{testeConversationBean.selecionaPersonagem}"
+                         value="Selecionar Personagem Foard" action="conversation2"/>
 
-        <h:commandButton actionListener="#{testeViewBean.selecionaPersonagem}"
-                         value="Selecionar Personagem Redirect" action="view2?faces-redirect=true"/>
+        <h:commandButton actionListener="#{testeConversationBean.selecionaPersonagem}"
+                         value="Selecionar Personagem Redirect" action="conversation2?faces-redirect=true"/>
+
+        <h:commandButton action="#{testeConversationBean.endConversation()}"
+                         value="Finalizar Conversation Scoped"/><br/>
+
+        <!--Para trabalharmos com link utilizando o @ConversationBean,
+         precisarmos adicionar como parametro o conversation-->
+        <h:link outcome="conversation2" value="Ir para conversation2"
+                rendered="#{!testeConversationBean.conversation.transient}">
+            <f:param name="cid" value="#{testeConversationBean.conversation.id}"/>
+        </h:link>
+
     </h:form>
 </h:body>
 
